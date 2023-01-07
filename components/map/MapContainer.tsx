@@ -40,7 +40,7 @@ export default function MapContainer() {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY!, // (To be fixed) 
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!, // (To be fixed) 
     mapIds: ['map-01'],
   });
 

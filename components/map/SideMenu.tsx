@@ -95,8 +95,7 @@ export default function SideMenu() {
             value={value}
             textColor='secondary'
             indicatorColor='secondary'
-            variant= 'scrollable'
-            scrollButtons={false}
+            variant= 'fullWidth'
             onChange={handleChange}
           >
             <Tab icon={<HexagonOutlinedIcon sx={{fontSize: '1.2rem'}} />} label='Area' sx={{ fontSize: '0.7rem' }} />
