@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { ElementType } from 'react';
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
@@ -57,8 +59,8 @@ const CustomNav = styled(List)<{ component?: ElementType }>({
 
 export default function SideBar() {
   return (
-    <Box sx={{ display: 'flex'}}>
-      <Paper elevation={0} sx={{width: '100%', height: 'calc(100vh - 65px)', borderRadius: 0}}>
+    <Box>
+      <Paper elevation={0} sx={{width: '100%', height: '100vh', maxHeight: '100%', overflow: 'auto', borderRadius: 0}}>
         <CustomNav>
           <Box sx={{
             display: 'flex',
@@ -67,24 +69,26 @@ export default function SideBar() {
             alignItems: 'center',
             py: 2
           }}>
-            <Box sx={{ borderRadius: '50%', bgcolor: 'red', height: 90, width: 90, mb: 1}}></Box>
+            <Box sx={{ height: 90, width: 90, mb: 1}}>
+              <Image src='/images/movies/man.jpg' height='200' width='150' alt='DP' style={{ width: '100%', height: '100%', borderRadius: '50%' }} />
+            </Box>
             <Typography variant='h5' textAlign='center'>Eric Hoffman</Typography>
           </Box>
           
           <Divider />
 
           <Box sx={{ my: 1 }}>
-            {settingsGroup1.map((item) => (
+            {settingsGroup1.map((item, i) => (
               <ListItemButton
                 key={item.label}
-                sx={{ py: 0, minHeight: 32, }}
+                sx={{ py: 0, minHeight: 32 }}
               >
                 <ListItemIcon sx={{ color: 'inherit' }}>
                   {item.icon}
                 </ListItemIcon>
                 <ListItemText
                   primary={item.label}
-                  primaryTypographyProps={{ fontSize: 14, fontWeight: 'medium' }}
+                  primaryTypographyProps={{ fontSize: 14, fontWeight: i === 0 ? 'bold' : 'light' }}
                 />
               </ListItemButton>
             ))}

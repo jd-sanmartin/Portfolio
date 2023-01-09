@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -21,6 +23,7 @@ export default function MovieCard({movie, selected}: props) {
   const {
     title,
     rating,
+    imagePath,
   } = movie;
 
   return (
@@ -28,16 +31,17 @@ export default function MovieCard({movie, selected}: props) {
         <Card
           variant='outlined'
           sx={{
-            boxShadow: selected ? '0px 0px 5px 5px #626' : '',
+            boxShadow: selected ? '0px 0px 3px 3px #646' : '',
           }}
         >
-          {/* <CardMedia
-            sx={{ height: 140 }}
-            image="/static/images/cards/contemplative-reptile.jpg"
-            title="green iguana"
-          /> */}
           <CardContent sx={{ p: 1 }}>
-            <Box sx={{ bgcolor: 'red', height: 240, width: '100%', mb: 1 }}></Box>
+            <Image
+              src={`/images/movies/${imagePath}`}
+              alt={title}
+              height='200'
+              width='150'
+              style={{ display: 'block', width: '100%', height: 'auto' }}
+            />
             <Typography variant='h5'>
               {title}
             </Typography>
