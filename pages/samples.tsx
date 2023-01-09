@@ -47,15 +47,14 @@ export default function Home() {
           <Grid
             container
             spacing={1}
-            justifyContent='center'
           >
-              {
-                SamplesData.map((props,i) => (
-                  <Grid key={`sample-card-${i}`} item sm={12} md={6}>
-                    <SampleCard  {...props} />
-                  </Grid>
-                ))
-              }
+            {
+              SamplesData.map((props,i) => (
+                <Grid key={`sample-card-${i}`} item sm={12} md={6}>
+                  <SampleCard  {...props} />
+                </Grid>
+              ))
+            }
           </Grid>
         </Paper>
       </Container>

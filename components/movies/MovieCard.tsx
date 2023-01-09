@@ -40,7 +40,7 @@ export default function MovieCard({movie, selected}: props) {
               alt={title}
               height='200'
               width='150'
-              style={{ display: 'block', width: '100%', height: 'auto' }}
+              style={{ display: 'block', width: '100%', height: 'auto', marginBottom: '0.5rem' }}
             />
             <Typography variant='h5'>
               {title}
