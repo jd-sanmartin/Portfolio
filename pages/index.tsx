@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Tooltip from '@mui/material/Tooltip';
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 interface SectionLinkProps {
   text: string,
@@ -77,19 +78,29 @@ export default function Home() {
             ))}
           </Grid>
 
-          <Link
-            href='https://www.linkedin.com/in/juan-david-sanmartin-betancur/'
-            style={{ 
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'center',
-              fontSize: 40
-            }} 
-          >
-            <Tooltip title='Contact me' placement='top' arrow>  
-              <LinkedInIcon fontSize='inherit' />
-            </Tooltip>
-          </Link>
+          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+            <Link
+              href='https://www.linkedin.com/in/juan-david-sanmartin-betancur/'
+              style={{
+                fontSize: 40
+              }} 
+            >
+              <Tooltip title='Contact me' placement='top' arrow>  
+                <LinkedInIcon fontSize='inherit' />
+              </Tooltip>
+            </Link>
+
+            <Link
+              href='https://github.com/juansanmartin251880/Portfolio'
+              style={{
+                fontSize: 40
+              }} 
+            >
+              <Tooltip title='View source code' placement='top' arrow>  
+                <GitHubIcon fontSize='inherit' />
+              </Tooltip>
+            </Link>
+          </div>
         </Paper>
       </Container>
     </div>
