@@ -12,6 +12,16 @@ const SamplesData: SampleCardProps[] = [
     link: '/map',
   },
   {
+    name: 'Movies App',
+    text: [
+      'This sample is based on an interview challenge I saw on Reddit', 
+      'This is a Netflix-like page that shows some movies and shows their information by clicking on each movie card.'
+    ],
+    technologiesUsed: 'React Js, Next Js, Typescript, Material UI',
+    accentColor: '#22dc75',
+    link: '/movies',
+  },
+  {
     name: 'Portfolio',
     text: [
       'Yes, this portfolio you are seeing right now. A meta-reference.', 
