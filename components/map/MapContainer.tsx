@@ -1,5 +1,3 @@
-// COMM: Map container contains the GoogleMap and the map action buttons
-
 import { useContext, useState, useCallback } from 'react';
 import { MapContext } from '../../pages/map';
 
@@ -88,8 +86,6 @@ export default function MapContainer() {
     };
   }, []);
 
-  // COMM: Is there a way to avoid declaring all these functions 
-
   const onUnmount = useCallback(function callback(map) {
     setMap(null)
   }, []);
@@ -162,9 +158,6 @@ export default function MapContainer() {
                 disableDefaultUI: true,
               }}
             >
-              {/* COMM: It looks like a mess, but these children are responsible for rendering
-                drawings on the map. I can't think right now in a way of simplifying this
-              */}
               {
                 polygonCoordinates.map((coords, i) => (
                   <Marker

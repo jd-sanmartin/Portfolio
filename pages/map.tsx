@@ -1,5 +1,3 @@
-// COMM: This page contains the side menu (which is hidden when hitting the md breakpoint and a map)
-
 import Head from "next/head";
 
 import { useState, createContext } from 'react';
@@ -28,9 +26,6 @@ export default function Map() {
 	
 	const [polylineCoordinates, setPolylineCoordinates] = useState<Point[]>([]);
 	const [obstacleCoordinates, setObstacleCoordinates] = useState<Point[]>([]);
-
-  // COMM: Is there a way to avoid doing all these declarations?
-  // I can't move them because they all depend on useState variables created inside this component
 
   const pushPolygonCoordinates = (coord: Point) => {
     setPolygonCoordinates([...polygonCoordinates, coord]);
