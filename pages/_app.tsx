@@ -1,17 +1,26 @@
-import '../styles/globals.css';
 import type { AppProps } from 'next/app';
+import { useState, useContext, createContext } from 'react';
+
 import NavBar from '../components/NavBar';
+import '../styles/globals.css';
 
 import { useTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
-import Theme from '../utils/Theme';
+import { DarkTheme, LightTheme } from '../utils/Themes';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <div style={{overflow: 'hidden'}}>
-    <ThemeProvider theme={Theme}>
-      <Box sx={{ bgcolor: 'background.default', height: '100vh' }}>
-        <NavBar />
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  // const [theme, setTheme] = useState(DarkTheme);
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  }; 
+
+  return <div>
+    <ThemeProvider theme={isDarkTheme ? DarkTheme : LightTheme}>
+      <Box sx={{ bgcolor: 'background.default', height: '110vh' }}>
+        <NavBar isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
         <Component {...pageProps} />
       </Box>
     </ThemeProvider>

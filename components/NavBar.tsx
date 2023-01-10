@@ -15,7 +15,8 @@ import MenuItem from '@mui/material/MenuItem';
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 
 import { useTheme } from '@mui/material/styles';
 
@@ -29,9 +30,13 @@ const pages: ButtonLinkProps[] = [
   { displayText: 'Samples', route: '/samples'},
 ];
 
-export default function NavBar() {
+interface props {
+  isDarkTheme: boolean;
+  toggleTheme(): void;
+}
+
+export default function NavBar({ isDarkTheme, toggleTheme }: props) {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -153,6 +158,14 @@ export default function NavBar() {
                 <GitHubIcon fontSize='inherit' />
               </Tooltip>
             </Link>
+
+            <IconButton onClick={toggleTheme} sx={{ fontSize: 28, color: 'text.primary' }}>
+              {
+                isDarkTheme ?
+                  ( <LightModeOutlinedIcon sx={{ fontSize: 'inherit', color: 'text.primary' }} /> ) :
+                  ( <DarkModeOutlinedIcon sx={{ fontSize: 'inherit', color: 'white' }} /> )
+              }
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>

@@ -9,6 +9,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { text } from 'stream/consumers';
 
 interface SectionLinkProps {
   text: string,
@@ -23,14 +24,14 @@ const sections: SectionLinkProps[] = [
 const paperStyles = {
   padding: '1rem',
   outline: 'solid 1px white',
-  transition: 'all 0.17s ease-in',
+  transition: 'outline 0.2s ease-in, box-shadow 0.2s ease-in',
   textAlign: 'center',
   fontWeight: 'bold',
   ':hover': {
     boxShadow: 10,
     outline: '0.2rem solid white',
     cursor: 'pointer',
-    backgroundColor: '#424259'
+    // backgroundColor: '#424259',
   },
 };
 
@@ -38,7 +39,7 @@ const SectionLink = ({ text, route } : SectionLinkProps) => {
   return (
     <Grid item xs={12} sm={4} md={3}>
       <Link href={route}>
-        <Paper sx={paperStyles}>{text}</Paper>
+        <Paper sx={paperStyles} elevation={3} >{text}</Paper>
       </Link>
     </Grid>
   )
@@ -79,8 +80,9 @@ export default function Home() {
 
           </div>
           <Paper sx={{ padding: 3, minWidth: '80vw', position: 'relative' }} elevation={2} >
-            <Typography variant='h3' align='center' mb={1}>Juan David Sanmartín</Typography>
-            <Typography variant='h6' align='center' mb={2}>Welcome to my portfolio</Typography>
+            <Typography variant='h3' align='center' color='text.primary' mb={1}>Juan David Sanmartín</Typography>
+            <Typography variant='h6' align='center' color='text.primary'>Full-Stack Developer</Typography>
+            <Typography variant='body1' align='center' color='text.primary' mb={2}>JS | React Js | C# | Node Js | Typescript</Typography>
 
             <Grid
               container

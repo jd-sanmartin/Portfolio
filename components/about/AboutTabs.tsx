@@ -59,52 +59,6 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-interface StyledTabsProps {
-  children?: React.ReactNode;
-  value: number;
-  onChange: (event: React.SyntheticEvent, newValue: number) => void;
-  orientation: 'horizontal' | 'vertical';
-  variant: 'fullWidth' | 'scrollable';
-}
-
-const StyledTabs = styled((props: StyledTabsProps) => (
-  <Tabs
-    {...props}
-    TabIndicatorProps={{ children: <span className='MuiTabs-indicatorSpan' /> }}
-  />
-))({
-  '& .MuiTabs-indicator': {
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-  '& .MuiTabs-indicatorSpan': {
-    maxWidth: 40,
-    width: '100%',
-    backgroundColor: '#524269',
-  },
-});
-
-interface StyledTabProps {
-  label: string;
-}
-
-const StyledTab = styled((props: StyledTabProps) => (
-  <Tab disableRipple {...props} />
-))(({ theme }) => ({
-  textTransform: 'none',
-  fontWeight: theme.typography.fontWeightRegular,
-  fontSize: theme.typography.pxToRem(15),
-  marginRight: theme.spacing(1),
-  color: 'rgba(255, 255, 255, 0.7)',
-  '&.Mui-selected': {
-    color: '#fff',
-  },
-  '&.Mui-focusVisible': {
-    backgroundColor: 'rgba(100, 95, 228, 0.32)',
-  },
-}));
-
 export default function AboutTabs() {
   const [value, setValue] = useState(0);
   let theme = useTheme();
@@ -122,7 +76,7 @@ export default function AboutTabs() {
         width: '100%'
       }}
     >
-      <StyledTabs
+      <Tabs
         orientation = 'vertical'
         variant='fullWidth'
         value={value}
@@ -130,9 +84,9 @@ export default function AboutTabs() {
         sx={{ minWidth: '8rem' }}
       >
         {sections.map((x, i) => (
-          <StyledTab key={`about-tab-${x.name}`} label={x.displayName} />
+          <Tab key={`about-tab-${x.name}`} label={x.displayName} />
         ))}
-      </StyledTabs>
+      </Tabs>
 
       <TabPanel value={value} index={0}>
         <TabBio />

@@ -20,7 +20,7 @@ export default function SampleCard(props: SampleCardProps) {
           height: '100%',
           width: '8px',
           backgroundColor: accentColor || '#4e2453',
-          boxShadow: `0px 0px 9px 2px ${accentColor || '#4e2453'}`,
+          boxShadow: `0px 0px 6px 2px ${accentColor || '#4e2453'}`,
           position: 'absolute',
         }
       }></Box>

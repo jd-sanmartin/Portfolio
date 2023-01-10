@@ -89,7 +89,7 @@ export default function SideMenu() {
 
   return (
     <>
-      <Box sx={{ width: '100%', backgroundColor: '#222', height: '100%', }}>
+      <Box sx={{ width: '100%', backgroundColor: 'background.paper', height: '100%', }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs
             value={value}

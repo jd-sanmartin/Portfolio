@@ -16,7 +16,7 @@ export default function CoordinatesListItem(props: CoordinateListItemProps) {
     <Card
       sx={{
         borderBottom: 1,
-        backgroundColor: '#222',
+        backgroundColor: 'background.paper',
         borderRadius: 0,
         position: 'relative',
         borderColor: '#777',

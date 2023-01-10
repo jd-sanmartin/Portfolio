@@ -35,19 +35,19 @@ export default function MapButtons(){
         exclusive
         onChange={handleButtonChange}
       >
-        <ToggleButton value='polygon' sx={{ backgroundColor: '#424c' }}>
+        <ToggleButton value='polygon' sx={{ backgroundColor: 'primary.dark' }}>
           <Tooltip title='Edit Area' placement='left' arrow>
-            <HexagonOutlinedIcon />
+            <HexagonOutlinedIcon sx={{ color: 'white' }} />
           </Tooltip>
         </ToggleButton>
-        <ToggleButton value='polyline' sx={{ backgroundColor: '#424c' }}>
+        <ToggleButton value='polyline' sx={{ backgroundColor: 'primary.dark' }}>
           <Tooltip title='Edit Route' placement='left' arrow>
-            <PolylineOutlinedIcon />
+            <PolylineOutlinedIcon sx={{ color: 'white' }} />
           </Tooltip>
         </ToggleButton>
-        <ToggleButton value='obstacle' sx={{ backgroundColor: '#424c' }}>
+        <ToggleButton value='obstacle' sx={{ backgroundColor: 'primary.dark' }}>
           <Tooltip title='Edit Obstacles' placement='left' arrow>
-            <DangerousOutlinedIcon />
+            <DangerousOutlinedIcon sx={{ color: 'white' }} />
           </Tooltip>
         </ToggleButton>
       </ToggleButtonGroup>
@@ -58,9 +58,9 @@ export default function MapButtons(){
         orientation='vertical'
         exclusive
       >
-        <ToggleButton value={1} sx={{ backgroundColor: '#424c' }} onClick={handleHelpButtonClick}>
+        <ToggleButton value={1} sx={{ backgroundColor: 'primary.dark' }} onClick={handleHelpButtonClick}>
           <Tooltip title='Help' placement='left' arrow>
-            <HelpOutlineIcon />
+            <HelpOutlineIcon sx={{ color: 'white' }} />
           </Tooltip>
         </ToggleButton>
       </ToggleButtonGroup>

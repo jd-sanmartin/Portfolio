@@ -40,7 +40,7 @@ export default function Home() {
           },
         }}
       >
-        <Paper sx={{ padding: 3 }} >
+        <Paper elevation={2} sx={{ padding: 3 }} >
           <Typography variant='h3' mb={1}>Demo Samples</Typography>
           <Typography variant='subtitle1' mb={2}>These are some samples of what I can do. There are not much samples right now, but more are coming soon! </Typography>
 
