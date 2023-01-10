@@ -63,45 +63,61 @@ export default function Home() {
           height: 'calc(100vh - 65px)',
         }}
       >
-        <Paper sx={{ padding: 3, minWidth: '80vw', position: 'relative'}} >
-          <Typography variant='h3' align='center' mb={1}>Juan David Sanmartín</Typography>
-          <Typography variant='h6' align='center' mb={2}>Welcome to my portfolio</Typography>
-
-          <Grid
-            container
-            spacing={2}
-            justifyContent='center'
-            mb={3}
+        <div style={{ padding: 1, position: 'relative', }}>
+          <div
+            className='animated-gradient-1'
+            style={{
+              backgroundColor: 'green',
+              position: 'absolute',
+              height: '100%',
+              width: '100%',
+              top: 0,
+              left: 0,
+              filter: 'blur(30px)'
+            }}
           >
-            {sections.map((x,i) => (
-              <SectionLink key={`section-link-${i}`} {...x} />
-            ))}
-          </Grid>
 
-          <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '1rem' }}>
-            <Link
-              href='https://www.linkedin.com/in/juan-david-sanmartin-betancur/'
-              style={{
-                fontSize: 40
-              }} 
-            >
-              <Tooltip title='Contact me' placement='top' arrow>  
-                <LinkedInIcon fontSize='inherit' />
-              </Tooltip>
-            </Link>
-
-            <Link
-              href='https://github.com/jd-sanmartin/Portfolio'
-              style={{
-                fontSize: 40
-              }} 
-            >
-              <Tooltip title='View source code' placement='top' arrow>  
-                <GitHubIcon fontSize='inherit' />
-              </Tooltip>
-            </Link>
           </div>
-        </Paper>
+          <Paper sx={{ padding: 3, minWidth: '80vw', position: 'relative' }} elevation={2} >
+            <Typography variant='h3' align='center' mb={1}>Juan David Sanmartín</Typography>
+            <Typography variant='h6' align='center' mb={2}>Welcome to my portfolio</Typography>
+
+            <Grid
+              container
+              spacing={2}
+              justifyContent='center'
+              mb={3}
+            >
+              {sections.map((x,i) => (
+                <SectionLink key={`section-link-${i}`} {...x} />
+              ))}
+            </Grid>
+
+            <div style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '1rem' }}>
+              <Link
+                href='https://www.linkedin.com/in/juan-david-sanmartin-betancur/'
+                style={{
+                  fontSize: 40
+                }} 
+              >
+                <Tooltip title='Contact me' placement='top' arrow>  
+                  <LinkedInIcon fontSize='inherit' />
+                </Tooltip>
+              </Link>
+
+              <Link
+                href='https://github.com/jd-sanmartin/Portfolio'
+                style={{
+                  fontSize: 40
+                }} 
+              >
+                <Tooltip title='View source code' placement='top' arrow>  
+                  <GitHubIcon fontSize='inherit' />
+                </Tooltip>
+              </Link>
+            </div>
+          </Paper>
+        </div>
       </Container>
     </div>
   )

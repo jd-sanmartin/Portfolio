@@ -15,3 +15,32 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.animated-gradient-1 {
+  background: linear-gradient(25deg, #1c06ae, #9e1bda, #281bda, #b20a99, #19109c, #780398, #19109c);
+  background-size: 600% 600%;
+  -webkit-animation: animatedGradient 8s ease infinite;
+  -moz-animation: animatedGradient 8s ease infinite;
+  -o-animation: animatedGradient 8s ease infinite;
+  animation: animatedGradient 8s ease infinite;
+}
+@-webkit-keyframes animatedGradient {
+  0%{background-position:52% 0%}
+  50%{background-position:49% 100%}
+  100%{background-position:52% 0%}
+}
+@-moz-keyframes animatedGradient {
+  0%{background-position:52% 0%}
+  50%{background-position:49% 100%}
+  100%{background-position:52% 0%}
+}
+@-o-keyframes animatedGradient {
+  0%{background-position:52% 0%}
+  50%{background-position:49% 100%}
+  100%{background-position:52% 0%}
+}
+@keyframes animatedGradient {
+  0%{background-position:52% 0%}
+  50%{background-position:49% 100%}
+  100%{background-position:52% 0%}
+}
