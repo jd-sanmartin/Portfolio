@@ -19,7 +19,7 @@ export default function CoordinatesListItem(props: CoordinateListItemProps) {
         backgroundColor: 'background.paper',
         borderRadius: 0,
         position: 'relative',
-        borderColor: '#777',
+        borderColor: 'divider',
       }}
     >
       <div style={{position: 'absolute', right: 10, top: 10}}>

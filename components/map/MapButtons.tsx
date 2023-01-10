@@ -35,17 +35,17 @@ export default function MapButtons(){
         exclusive
         onChange={handleButtonChange}
       >
-        <ToggleButton value='polygon' sx={{ backgroundColor: 'primary.dark' }}>
+        <ToggleButton value='polygon' sx={{ backgroundColor: 'primary.dark', '&.Mui-selected': { backgroundColor: '#676767' } }}>
           <Tooltip title='Edit Area' placement='left' arrow>
             <HexagonOutlinedIcon sx={{ color: 'white' }} />
           </Tooltip>
         </ToggleButton>
-        <ToggleButton value='polyline' sx={{ backgroundColor: 'primary.dark' }}>
+        <ToggleButton value='polyline' sx={{ backgroundColor: 'primary.dark', '&.Mui-selected': { backgroundColor: '#676767' } }}>
           <Tooltip title='Edit Route' placement='left' arrow>
             <PolylineOutlinedIcon sx={{ color: 'white' }} />
           </Tooltip>
         </ToggleButton>
-        <ToggleButton value='obstacle' sx={{ backgroundColor: 'primary.dark' }}>
+        <ToggleButton value='obstacle' sx={{ backgroundColor: 'primary.dark', '&.Mui-selected': { backgroundColor: '#676767' } }}>
           <Tooltip title='Edit Obstacles' placement='left' arrow>
             <DangerousOutlinedIcon sx={{ color: 'white' }} />
           </Tooltip>
@@ -58,7 +58,7 @@ export default function MapButtons(){
         orientation='vertical'
         exclusive
       >
-        <ToggleButton value={1} sx={{ backgroundColor: 'primary.dark' }} onClick={handleHelpButtonClick}>
+        <ToggleButton value={1} sx={{ backgroundColor: 'primary.dark', '&.Mui-selected': { backgroundColor: '#676767' } }} onClick={handleHelpButtonClick}>
           <Tooltip title='Help' placement='left' arrow>
             <HelpOutlineIcon sx={{ color: 'white' }} />
           </Tooltip>

@@ -74,13 +74,13 @@ export default function Home() {
               width: '100%',
               top: 0,
               left: 0,
-              filter: 'blur(30px)'
+              filter: 'blur(70px)'
             }}
           >
 
           </div>
-          <Paper sx={{ padding: 3, minWidth: '80vw', position: 'relative' }} elevation={2} >
-            <Typography variant='h3' align='center' color='text.primary' mb={1}>Juan David Sanmartín</Typography>
+          <Paper sx={{ padding: 3, minWidth: '80vw', position: 'relative', }} elevation={2} >
+            <Typography variant='h3' align='center' color='text.primary'>Juan David Sanmartín</Typography>
             <Typography variant='h6' align='center' color='text.primary'>Full-Stack Developer</Typography>
             <Typography variant='body1' align='center' color='text.primary' mb={2}>JS | React Js | C# | Node Js | Typescript</Typography>
 

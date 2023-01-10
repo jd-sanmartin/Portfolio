@@ -1,8 +1,9 @@
-import { useContext, useState, useCallback } from 'react';
+import { useContext, useState, useCallback, useEffect } from 'react';
 import { MapContext } from '../../pages/map';
 
 import { GoogleMap, useJsApiLoader, Marker, Polygon, Polyline } from '@react-google-maps/api';
 
+import { ThemeProvider, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Point from '../../types/map/Point';
 
@@ -15,6 +16,9 @@ let svgPolylineMarker: string | google.maps.Icon | google.maps.Symbol | undefine
 
 export default function MapContainer() {
   const mapContext = useContext(MapContext);
+
+  const [map, setMap] = useState<any>(null);
+
   const {
     drawMode,
     setDrawMode,
@@ -32,6 +36,18 @@ export default function MapContainer() {
     updateObstacleCoordinatesAt,
   } = mapContext;
 
+  const theme = useTheme();
+
+  useEffect(() => {
+    if (map) {
+      if (theme.palette.mode === 'dark') {
+        map.setOptions({styles: mapStyles});
+      } else {
+        map.setOptions({styles: {}});
+      }
+    }
+  }, [map, theme]);
+
   const center = { lat: 6.345228512607375, lng: -75.51272415176523 }
 
   const { isLoaded } = useJsApiLoader({
@@ -39,16 +55,16 @@ export default function MapContainer() {
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
     mapIds: ['map-01'],
   });
-
-  const [map, setMap] = useState(null);
   
   const onLoad = useCallback(function callback(map: any) {
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
 
-    map.setOptions({styles: mapStyles});
-
     setMap(map);
+
+    if (theme.palette.mode === 'dark') {
+      map.setOptions({styles: mapStyles});
+    }
 
     svgPolygonMarker = {
       path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',

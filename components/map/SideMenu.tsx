@@ -93,8 +93,6 @@ export default function SideMenu() {
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs
             value={value}
-            textColor='secondary'
-            indicatorColor='secondary'
             variant= 'fullWidth'
             onChange={handleChange}
           >

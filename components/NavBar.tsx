@@ -118,7 +118,7 @@ export default function NavBar({ isDarkTheme, toggleTheme }: props) {
               textDecoration: 'none',
               }}
             >
-              Juan David
+              JDS
             </Typography>
           </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>

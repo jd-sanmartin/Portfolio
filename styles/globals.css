@@ -19,12 +19,12 @@ a {
 }
 
 .animated-gradient-1 {
-  background: linear-gradient(25deg, #1c06ae, #9e1bda, #281bda, #b20a99, #19109c, #780398, #19109c);
+  background: linear-gradient(25deg, #4c33ec, #9e1bda, #281bda, #b20a99, #0870b1, #780398, #19109c);
   background-size: 600% 600%;
-  -webkit-animation: animatedGradient 8s ease infinite;
-  -moz-animation: animatedGradient 8s ease infinite;
-  -o-animation: animatedGradient 8s ease infinite;
-  animation: animatedGradient 8s ease infinite;
+  -webkit-animation: animatedGradient 6s ease infinite;
+  -moz-animation: animatedGradient 6s ease infinite;
+  -o-animation: animatedGradient 6s ease infinite;
+  animation: animatedGradient 6s ease infinite;
 }
 @-webkit-keyframes animatedGradient {
   0%{background-position:52% 0%}
