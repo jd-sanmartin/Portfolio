@@ -9,11 +9,9 @@ import Point from '../../types/map/Point';
 import MapButtons from './MapButtons';
 import mapStyles from '../../utils/MapStyles';
 
-import SvgMarkerIcon from '../../types/map/SvgMarkerIcon';
-
-let svgPolygonMarker: SvgMarkerIcon;
-let svgObstacleMarker: SvgMarkerIcon;
-let svgPolylineMarker: SvgMarkerIcon;
+let svgPolygonMarker: string | google.maps.Icon | google.maps.Symbol | undefined;
+let svgObstacleMarker: string | google.maps.Icon | google.maps.Symbol | undefined;
+let svgPolylineMarker: string | google.maps.Icon | google.maps.Symbol | undefined;
 
 export default function MapContainer() {
   const mapContext = useContext(MapContext);
@@ -38,13 +36,13 @@ export default function MapContainer() {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!, // (To be fixed) 
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
     mapIds: ['map-01'],
   });
 
   const [map, setMap] = useState(null);
-
-  const onLoad = useCallback(function callback(map) {
+  
+  const onLoad = useCallback(function callback(map: any) {
     const bounds = new window.google.maps.LatLngBounds(center);
     map.fitBounds(bounds);
 
@@ -84,9 +82,10 @@ export default function MapContainer() {
       anchor: new google.maps.Point(25, 25),
       labelOrigin: new google.maps.Point(24, 24),
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onUnmount = useCallback(function callback(map) {
+  const onUnmount = useCallback(function callback(map: any) {
     setMap(null)
   }, []);
 

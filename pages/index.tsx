@@ -91,7 +91,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href='https://github.com/juansanmartin251880/Portfolio'
+              href='https://github.com/jd-sanmartin/Portfolio'
               style={{
                 fontSize: 40
               }} 

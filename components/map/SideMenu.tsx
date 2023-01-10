@@ -80,7 +80,7 @@ export default function SideMenu() {
 
   useEffect(() => {
     setValue(drawModes.indexOf(drawMode));
-  }, [drawMode, drawModes])
+  }, [drawMode])
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);

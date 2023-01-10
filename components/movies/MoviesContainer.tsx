@@ -36,6 +36,7 @@ export default function MoviesContainer({openSideBar} : props) {
   useEffect(() => {
     const numCols = 12 / breakpointGridWidths[currentBreakPoint];
     setInfoModalIndex(Math.floor(selected / numCols) * numCols);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[selected, currentBreakPoint]);
 
   const handleClick = (i: number) => {
