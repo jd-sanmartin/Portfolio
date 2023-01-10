@@ -26,9 +26,9 @@ export default function SearchBar ({ handleTextBoxChange, openSideBar }: props) 
   const width = useWidth();
   
   return (
-    <Box sx={{ width: '100%', position: { xs: 'relative', md: 'sticky' }, top: 0, px: 3, zIndex: 9999 }}>
-      <Paper sx={{ display: 'flex', justifyContent: 'flex-start', px: 1, py: 2, gap: 1, }}>
-        <IconButton onClick={handleMenuButtonClick} sx={{ display: { xs: 'block', md: 'none' } }}>
+    <Box sx={{ width: '100%', position: { xs: 'relative', md: 'sticky' }, top: 0, px: 3, zIndex: 8000 }}>
+      <Paper sx={{ display: 'flex', justifyContent: 'flex-start', gap: 1, px: 1, py: 2, }}>
+        <IconButton onClick={handleMenuButtonClick} sx={{ display: { xs: 'block', sm: 'none' } }}>
           <MenuIcon />
         </IconButton>
 

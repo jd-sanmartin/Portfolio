@@ -22,8 +22,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 
-
-
 const settingsGroup1 = [
   { icon: <SearchIcon />, label: 'Discover' },
   { icon: <PlaylistPlayIcon />, label: 'Playlist' },
@@ -60,7 +58,28 @@ const CustomNav = styled(List)<{ component?: ElementType }>({
 export default function SideBar() {
   return (
     <Box>
-      <Paper elevation={0} sx={{width: '100%', height: '100vh', maxHeight: '100%', overflow: 'auto', borderRadius: 0}}>
+      <Paper
+        elevation={0} 
+        sx={{width: '100%',
+        height: '100vh',
+        maxHeight: '100%',
+        overflow: 'auto',
+        overflowY: 'auto',
+        scrollbarWidth: 'thin',
+        '&::-webkit-scrollbar': {
+            width: '0.4em',
+        },
+        '&::-webkit-scrollbar-track': {
+            background: '#555',
+        },
+        '&::-webkit-scrollbar-thumb': {
+            backgroundColor: '#aaa',
+        },
+        '&::-webkit-scrollbar-thumb:hover': {
+            background: '#555'
+        },
+        borderRadius: 0
+      }}>
         <CustomNav>
           <Box sx={{
             display: 'flex',

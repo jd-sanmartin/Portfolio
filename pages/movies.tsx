@@ -19,7 +19,6 @@ export default function Movies() {
   };
 
   const closeSideBar = () => {
-    console.log('closing sidebar')
     setOpenDrawer(false);
   };
 
@@ -42,6 +41,7 @@ export default function Movies() {
                 <Drawer
                   open={openDrawer}
                   onClose={closeSideBar}
+                  sx={{ zIndex: 9000 }}
                 >
                   <SideBar />
                 </Drawer>
