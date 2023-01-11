@@ -31,7 +31,7 @@ export default function SkillCard(props: SkillAccordeonProps) {
       }></Box>
       
       <Card
-        variant='outlined'
+        elevation={2}
         sx={{
           borderLeft: 0,
           cursor: details ? 'pointer' : 'auto',

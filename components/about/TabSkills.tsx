@@ -15,7 +15,7 @@ export default function TabSkills() {
     <Grid container spacing={2} sx={{ width: '100%' }}>
       {
         SkillsData.sort((a,b) => compareFn(a.skillLevel, b.skillLevel)).map((skill, i) => (
-          <Grid item key={`skill-card-${i}`} xs={12} sm={6} md={4} lg={3}>
+          <Grid item key={`skill-card-${i}`} xs={6} sm={6} md={4} lg={3}>
             <SkillCard {...skill} />
           </Grid>
         ))

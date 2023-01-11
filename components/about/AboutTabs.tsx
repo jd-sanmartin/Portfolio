@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { styled } from '@mui/material/styles';
-import { useTheme } from '@mui/material/styles';
+
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
@@ -10,6 +9,8 @@ import TabSkills from './TabSkills';
 
 import TabPanelProps from '../../types/about/TabPanelProps';
 import TabTimeline from './TabTimeline';
+
+import { useWidth } from '../../hooks/useWidth';
 
 interface SectionProps {
   name: string;
@@ -37,16 +38,16 @@ function TabPanel(props: TabPanelProps) {
         overflowX: 'hidden',
         scrollbarWidth: 'thin',
         '&::-webkit-scrollbar': {
-            width: '0.4em',
+          width: '0.4em',
         },
         '&::-webkit-scrollbar-track': {
-            background: '#555',
+          background: '#555',
         },
         '&::-webkit-scrollbar-thumb': {
-            backgroundColor: '#aaa',
+          backgroundColor: '#aaa',
         },
         '&::-webkit-scrollbar-thumb:hover': {
-            background: '#555'
+          background: '#555'
         },
       }}
     >
@@ -61,32 +62,63 @@ function TabPanel(props: TabPanelProps) {
 
 export default function AboutTabs() {
   const [value, setValue] = useState(0);
-  let theme = useTheme();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
+  const breakpoint = useWidth();
+
   return (
     <Box
       sx={{
-        flexGrow: 1,
-        display: 'flex',
+        display: breakpoint !== 'xs' ? 'flex' : 'block',
         height: 'calc(100vh - 64px)',
-        width: '100%'
+        width: '100%',
+        overflow: 'auto',
+        overflowX: 'hidden',
+        scrollbarWidth: 'thin',
+        '&::-webkit-scrollbar': {
+          width: '0.4em',
+        },
+        '&::-webkit-scrollbar-track': {
+          background: '#555',
+        },
+        '&::-webkit-scrollbar-thumb': {
+          backgroundColor: '#aaa',
+        },
+        '&::-webkit-scrollbar-thumb:hover': {
+          background: '#555'
+        },
       }}
     >
-      <Tabs
-        orientation = 'vertical'
-        variant='fullWidth'
-        value={value}
-        onChange={handleChange}
-        sx={{ minWidth: '8rem' }}
-      >
-        {sections.map((x, i) => (
-          <Tab key={`about-tab-${x.name}`} label={x.displayName} />
-        ))}
-      </Tabs>
+      {
+        !['xs'].includes(breakpoint) ? (
+          <Tabs
+            orientation = 'vertical'
+            variant='fullWidth'
+            value={value}
+            onChange={handleChange}
+            sx={{ minWidth: '8rem' }}
+          >
+            {sections.map((x, i) => (
+              <Tab key={`about-tab-${x.name}`} label={x.displayName} />
+            ))}
+          </Tabs>
+        ) : (
+          <Box sx={{ borderBottom: 1, borderColor: 'divider', position: 'sticky', top: 0, zIndex: 1000, backgroundColor: 'background.default' }}>
+            <Tabs
+              variant='fullWidth'
+              value={value}
+              onChange={handleChange}
+            >
+              {sections.map((x, i) => (
+                <Tab key={`about-tab-${x.name}`} label={x.displayName} />
+              ))}
+            </Tabs>
+          </Box>
+        )
+      }
 
       <TabPanel value={value} index={0}>
         <TabBio />
