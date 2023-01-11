@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Rating from "@mui/material/Rating";
 import IconButton from "@mui/material/IconButton";
@@ -13,6 +12,7 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 import Movie from "../../types/movies/Movie";
+import { useTheme } from '@mui/material/styles';
 
 interface props {
   movie: Movie;
@@ -26,12 +26,14 @@ export default function MovieCard({movie, selected}: props) {
     imagePath,
   } = movie;
 
+  const theme = useTheme();
+
   return (
     <Box>
         <Card
           variant='outlined'
           sx={{
-            boxShadow: selected ? '0px 0px 3px 3px #646' : '',
+            boxShadow: selected ? `0px 0px 3px 3px ${theme.palette.primary.main}` : '',
           }}
         >
           <CardContent sx={{ p: 1 }}>

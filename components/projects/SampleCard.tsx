@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import Link from 'next/link';
 
 import Box from '@mui/material/Box';
@@ -27,6 +25,7 @@ export default function SampleCard(props: SampleCardProps) {
       
       <Card
         variant='outlined'
+        elevation={3}
         sx={{
           borderLeft: 0,
           borderRadius: '0',
@@ -46,7 +45,7 @@ export default function SampleCard(props: SampleCardProps) {
             ) :
             (
               text.map((x, i) => (
-                <Typography key={`sample-${name}-text-p-${i}`} fontSize={17}>
+                <Typography key={`sample-${name}-text-p-${i}`} fontSize={17} mb={1} >
                   {x}
                 </Typography>
               ))

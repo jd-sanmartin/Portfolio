@@ -9,7 +9,6 @@ import Tooltip from '@mui/material/Tooltip';
 
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import { text } from 'stream/consumers';
 
 interface SectionLinkProps {
   text: string,
@@ -21,7 +20,7 @@ const sections: SectionLinkProps[] = [
   { text: 'Samples', route: '/samples'},
 ];
 
-const paperStyles = {
+const paperLinkStyles = {
   padding: '1rem',
   outline: 'solid 1px white',
   transition: 'outline 0.2s ease-in, box-shadow 0.2s ease-in',
@@ -31,7 +30,6 @@ const paperStyles = {
     boxShadow: 10,
     outline: '0.2rem solid white',
     cursor: 'pointer',
-    // backgroundColor: '#424259',
   },
 };
 
@@ -39,7 +37,7 @@ const SectionLink = ({ text, route } : SectionLinkProps) => {
   return (
     <Grid item xs={12} sm={4} md={3}>
       <Link href={route}>
-        <Paper sx={paperStyles} elevation={3} >{text}</Paper>
+        <Paper sx={paperLinkStyles} elevation={3} >{text}</Paper>
       </Link>
     </Grid>
   )
@@ -51,7 +49,6 @@ export default function Home() {
       <Head>
         <title>Portfolio - Juan David Sanmartin</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -88,7 +85,7 @@ export default function Home() {
               container
               spacing={2}
               justifyContent='center'
-              mb={3}
+              mb={2}
             >
               {sections.map((x,i) => (
                 <SectionLink key={`section-link-${i}`} {...x} />
@@ -99,7 +96,7 @@ export default function Home() {
               <Link
                 href='https://www.linkedin.com/in/juan-david-sanmartin-betancur/'
                 style={{
-                  fontSize: 40
+                  fontSize: 40,
                 }} 
               >
                 <Tooltip title='Contact me' placement='top' arrow>  

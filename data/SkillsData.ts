@@ -41,7 +41,7 @@ const SkillsData: SkillCardProps[] = [
     },
     {
       skillName: 'React',
-      experience: 'No work experience, although, this site uses it',
+      experience: '6 months',
       skillLevel: 3.5,
       accentColor: '#3893e1',
     },
@@ -53,7 +53,7 @@ const SkillsData: SkillCardProps[] = [
     },
     {
       skillName: 'Typescript',
-      experience: 'No work experience, although, this site uses it',
+      experience: '3 months',
       skillLevel: 2.5,
       accentColor: '#0432a5',
     },
@@ -65,20 +65,20 @@ const SkillsData: SkillCardProps[] = [
     },
     {
       skillName: 'Next Js',
-      experience: 'No work experience, although, this site uses it',
+      experience: '3 months',
       skillLevel: 2.5,
       accentColor: '#6ce69b',
     },
     {
-      skillName: 'Material UI',
-      experience: 'No work experience, although, this site uses it',
+      skillName: 'Material UI (MUI)',
+      experience: '6 months',
       skillLevel: 3,
       accentColor: '#e410f3',
     },
     {
       skillName: 'Jira',
       experience: '3 months',
-      skillLevel: 2,
+      skillLevel: 1.5,
       accentColor: '#4110f3',
     },
     {
@@ -86,6 +86,12 @@ const SkillsData: SkillCardProps[] = [
       experience: '1 year',
       skillLevel: 3,
       accentColor: '#1054f3',
+    },
+    {
+      skillName: 'Git',
+      experience: '3 years and 6 months',
+      skillLevel: 3,
+      accentColor: '#590aa2',
     },
 ];
 

@@ -14,22 +14,23 @@ export default function TabBio() {
         </Typography>
 
         <Typography color='text.primary' variant='body1' mb={1}>
-            I am Juan David Sanmartín, a bilingual web developer from Colombia.
-        </Typography>
-
-        <Typography color='text.primary' variant='body1' mb={1}>
-            I have three years and six months of experience with programming languages such as <b>Javascript</b>, <b>C#</b> and <b>Python</b>. Working on Front End and Back End environments.
-
-        </Typography>
-
-        <Typography color='text.primary' variant='body1' mb={1}>
-            I am a team player and a creative person who likes to find alternative solutions to add more value to the users. 
+          I am Juan David Sanmartín, a bilingual web developer from Colombia.
+          <br />
+          <br />
+          I have three years and six months of experience with programming languages such as <b>Javascript</b>, <b>C#</b> and <b>Python</b>. Working on Front End and Back End environments.
+          <br />
+          <br />
+          I have worked in agile teams using <b>Azure DevOps</b> and <b>JIRA</b>.
+          <br />
+          <br />
+          I am a team player and a creative person who likes to find alternative solutions to add more value to the users.
+          I can easily adapt to new situations and I am very open to learn new things and I can also lead when it is necessary.
         </Typography>
       </Box>
 
       <Grid container>
         <Grid item xs={12} sm={6}>
-          <Typography color='text.primary' variant='h5' sx={{textAlign: 'center'}}>
+          <Typography color='text.primary' variant='h5' sx={{ textAlign: { xs: 'left', sm: 'center' }, pl: { xs: 2, sm: 0 }}}>
             Hard Skills
           </Typography>
           <List
@@ -52,7 +53,7 @@ export default function TabBio() {
                 'Lateral Thinking',
               ].map((x,i) =>
                 <ListItem key={`hard-skill-${i}`}>
-                  <Typography color='text.primary' variant='h6'>{x}</Typography>
+                  <Typography color='text.primary' variant='body1'>{x}</Typography>
                 </ListItem>
               )
             }
@@ -60,7 +61,7 @@ export default function TabBio() {
         </Grid>
 
         <Grid item xs={12} sm={6}>
-          <Typography color='text.primary' variant='h5' sx={{textAlign: 'center'}}>
+          <Typography color='text.primary' variant='h5' sx={{ textAlign: { xs: 'left', sm: 'center' }, pl: { xs: 2, sm: 0 }}}>
             Soft Skills
           </Typography>
           <List
@@ -82,7 +83,7 @@ export default function TabBio() {
                 'Diplomacy',
               ].map((x,i) =>
                 <ListItem key={`hard-skill-${i}`}>
-                  <Typography color='text.primary' variant='h6'>{x}</Typography>
+                  <Typography color='text.primary' variant='body1'>{x}</Typography>
                 </ListItem>
               )
             }

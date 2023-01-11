@@ -58,9 +58,9 @@ export default function NavBar({ isDarkTheme, toggleTheme }: props) {
               noWrap
               sx={{
                 mr: 2,
-                display: { xs: 'none', md: 'flex' },
+                display: { xs: 'none', sm: 'flex' },
                 fontWeight: 700,
-                letterSpacing: '.3rem',
+                letterSpacing: '.2rem',
                 color: 'inherit',
                 textDecoration: 'none',
               }}
@@ -69,7 +69,7 @@ export default function NavBar({ isDarkTheme, toggleTheme }: props) {
             </Typography>
           </Link>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' } }}>
             <IconButton
               size="large"
               onClick={handleOpenNavMenu}
@@ -92,7 +92,7 @@ export default function NavBar({ isDarkTheme, toggleTheme }: props) {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                  display: { xs: 'block', md: 'none' },
+                  display: { xs: 'block', sm: 'none' },
               }}
             >
               {pages.map((page) => (
@@ -109,19 +109,19 @@ export default function NavBar({ isDarkTheme, toggleTheme }: props) {
               variant="h5"
               noWrap
               sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+                mr: 1,
+                display: { xs: 'flex', sm: 'none' },
+                flexGrow: 1,
+                fontWeight: 700,
+                letterSpacing: '.2rem',
+                color: 'inherit',
+                textDecoration: 'none',
               }}
             >
-              JDS
+              Juan David
             </Typography>
           </Link>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
             {pages.map((page) => (
               <div key={page.displayText}>
                 <Link href={page.route}>

@@ -22,27 +22,31 @@ export default function Home() {
         sx={{
           mt: 3,
           alignItems:'center',
-          height: 'calc(100% - 85px)',
+          height: 'calc(100% - 65px)',
           paddingBottom: 2,
-          overflowY: 'auto',
-          scrollbarWidth: 'thin',
-          '&::-webkit-scrollbar': {
-              width: '0.4em',
-          },
-          '&::-webkit-scrollbar-track': {
-              background: '#555',
-          },
-          '&::-webkit-scrollbar-thumb': {
-              backgroundColor: '#aaa',
-          },
-          '&::-webkit-scrollbar-thumb:hover': {
-              background: '#555'
-          },
         }}
       >
-        <Paper elevation={2} sx={{ padding: 3 }} >
+        <Paper
+          elevation={2}
+          sx={{
+            padding: 3,
+            maxHeight: '90%',
+            overflowY: 'auto',
+            scrollbarWidth: 'thin',
+            '&::-webkit-scrollbar': {
+                width: '0.4em',
+            },
+            '&::-webkit-scrollbar-track': {
+                background: '#555',
+            },
+            '&::-webkit-scrollbar-thumb': {
+                backgroundColor: '#aaa',
+            },
+            '&::-webkit-scrollbar-thumb:hover': {
+                background: '#555'
+            },
+          }}>
           <Typography variant='h3' mb={1}>Demo Samples</Typography>
-          <Typography variant='subtitle1' mb={2}>These are some samples of what I can do. There are not much samples right now, but more are coming soon! </Typography>
 
           <Grid
             container

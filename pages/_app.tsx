@@ -10,9 +10,8 @@ import Box from '@mui/material/Box';
 import { DarkTheme, LightTheme } from '../utils/Themes';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-  // const [theme, setTheme] = useState(DarkTheme);
-
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
   }; 

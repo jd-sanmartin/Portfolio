@@ -15,7 +15,7 @@ const SamplesData: SampleCardProps[] = [
     name: 'Movies App',
     text: [
       'This sample is based on an interview challenge I saw on Reddit', 
-      'This is a Netflix-like page that shows some movies and shows their information by clicking on each movie card.'
+      'This page shows the "discover" feature of a movie catalog app.'
     ],
     technologiesUsed: 'React Js, Next Js, Typescript, Material UI',
     accentColor: '#22dc75',
