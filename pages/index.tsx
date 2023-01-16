@@ -79,7 +79,7 @@ export default function Home() {
           <Paper sx={{ padding: 3, minWidth: '80vw', position: 'relative', }} elevation={2} >
             <Typography variant='h3' align='center' color='text.primary'>Juan David Sanmartín</Typography>
             <Typography variant='h6' align='center' color='text.primary'>Full-Stack Developer</Typography>
-            <Typography variant='body1' align='center' color='text.primary' mb={2}>JS | React Js | C# | Node Js | Typescript</Typography>
+            <Typography variant='body1' align='center' color='text.primary' mb={2}>Javascript | React Js | C# | Node Js | Typescript</Typography>
 
             <Grid
               container

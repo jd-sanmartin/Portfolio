@@ -5,9 +5,9 @@ export const DarkTheme = createTheme({
     mode: 'dark',
     contrastThreshold: 4.5,
     primary: {
-      main: '#ac77b0',
+      main: '#7b1fa2',
       light: '#ba68c8',
-      dark: '#7b1fa2'
+      dark: '#603080'
     },
   },
 });

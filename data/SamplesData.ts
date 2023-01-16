@@ -21,16 +21,6 @@ const SamplesData: SampleCardProps[] = [
     accentColor: '#22dc75',
     link: '/movies',
   },
-  {
-    name: 'Portfolio',
-    text: [
-      'Yes, this portfolio you are seeing right now. A meta-reference.', 
-      'I had a lot of fun building this portfolio and using the different components Material UI has to offer. I wanted to unleash my creativity while being sober in the design.'
-    ],
-    technologiesUsed: 'React Js, Next Js, Typescript, Material UI',
-    accentColor: '#ad71fa',
-    link: '/',
-  },
 ];
 
 export default SamplesData;

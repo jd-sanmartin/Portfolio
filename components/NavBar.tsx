@@ -49,7 +49,7 @@ export default function NavBar({ isDarkTheme, toggleTheme }: props) {
   const theme = useTheme();
 
   return (
-    <AppBar position="sticky" sx={{ top:0 }}>
+    <AppBar position="sticky" sx={{ top:0, backgroundColor: 'primary.main' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Link href='/'>
@@ -93,6 +93,7 @@ export default function NavBar({ isDarkTheme, toggleTheme }: props) {
               onClose={handleCloseNavMenu}
               sx={{
                   display: { xs: 'block', sm: 'none' },
+                  zIndex: 10000
               }}
             >
               {pages.map((page) => (
