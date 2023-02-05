@@ -1,4 +1,6 @@
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+
+import { useMap } from '../../utils/map/MapContext';
 
 import { useTheme } from "@mui/material";
 
@@ -10,7 +12,6 @@ import HexagonOutlinedIcon from '@mui/icons-material/HexagonOutlined';
 import PolylineOutlinedIcon from '@mui/icons-material/PolylineOutlined';
 import DangerousOutlinedIcon from '@mui/icons-material/DangerousOutlined';
 
-import { MapContext } from '../../pages/map';
 import CoordinatesListItem from './CoordinatesListItem';
 
 interface TabPanelProps {
@@ -62,7 +63,7 @@ function TabPanel(props: TabPanelProps) {
 const drawModes: ('polygon' | 'polyline' | 'obstacle' | 'none')[]  = ['polygon', 'polyline', 'obstacle', 'none'];
 export default function SideMenu() {
   const theme = useTheme();
-  const mapContext = useContext(MapContext);
+  const mapContext = useMap();
   const {
     polygonCoordinates,
     polylineCoordinates,
@@ -76,14 +77,14 @@ export default function SideMenu() {
     deleteObstacleCoordinatesAt,
   } = mapContext;
 
-  const [value, setValue] = useState(0);
+  const [tabValue, setTabValue] = useState(0);
 
   useEffect(() => {
-    setValue(drawModes.indexOf(drawMode));
+    setTabValue(drawModes.indexOf(drawMode));
   }, [drawMode])
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
-    setValue(newValue);
+  const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+    setTabValue(newValue);
     setDrawMode(drawModes[newValue]);
   };
 
@@ -92,9 +93,9 @@ export default function SideMenu() {
       <Box sx={{ width: '100%', backgroundColor: 'background.paper', height: '100%', }}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs
-            value={value}
+            value={tabValue}
             variant= 'fullWidth'
-            onChange={handleChange}
+            onChange={handleTabChange}
           >
             <Tab icon={<HexagonOutlinedIcon sx={{fontSize: '1.2rem'}} />} label='Area' sx={{ fontSize: '0.7rem' }} />
             <Tab icon={<PolylineOutlinedIcon sx={{fontSize: '1.2rem'}} />} label='Route' sx={{ fontSize: '0.7rem' }} />
@@ -102,7 +103,7 @@ export default function SideMenu() {
           </Tabs>
         </Box>
 
-        <TabPanel value={value} index={0} tabMode={'polygon'} currentTabMode={drawMode}>
+        <TabPanel value={tabValue} index={0} tabMode={'polygon'} currentTabMode={drawMode}>
           {
             polygonCoordinates.map((coord, i) => (
               <div key={`polygon-coord-acc-${i}`}>
@@ -116,7 +117,7 @@ export default function SideMenu() {
             ))
           }
         </TabPanel>
-        <TabPanel value={value} index={1} tabMode={'polyline'} currentTabMode={drawMode}>
+        <TabPanel value={tabValue} index={1} tabMode={'polyline'} currentTabMode={drawMode}>
           {
             polylineCoordinates.map((coord, i) => (
               <div key={`polygon-coord-acc-${i}`}>
@@ -130,7 +131,7 @@ export default function SideMenu() {
             ))
           }
         </TabPanel>
-        <TabPanel value={value} index={2} tabMode={'obstacle'} currentTabMode={drawMode}>
+        <TabPanel value={tabValue} index={2} tabMode={'obstacle'} currentTabMode={drawMode}>
           {
             obstacleCoordinates.map((coord, i) => (
               <div key={`obstacle-coord-acc-${i}`}>

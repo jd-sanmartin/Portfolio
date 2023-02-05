@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { MapContext } from '../../pages/map';
+import { useMap } from '../../utils/map/MapContext';
 
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ToggleButton from '@mui/material/ToggleButton';
@@ -12,7 +11,7 @@ import DangerousOutlinedIcon from '@mui/icons-material/DangerousOutlined';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 
 export default function MapButtons(){
-  const mapContext = useContext(MapContext);
+  const mapContext = useMap();
   const {
     drawMode,
     setDrawMode,

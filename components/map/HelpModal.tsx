@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import { MapContext } from '../../pages/map';
+import { useMap } from '../../utils/map/MapContext';
 
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
@@ -20,8 +19,8 @@ const style = {
   bgcolor: 'background.paper',
   boxShadow: 24,
   pt: 2,
-  px: 4,
   pb: 3,
+  px: 4,
   maxHeight: 'calc(100vh - 100px)',
   overflowY: 'auto',
   scrollbarWidth: 'thin',
@@ -40,7 +39,7 @@ const style = {
 };
 
 export default function HelpModal() {
-    const mapContext = useContext(MapContext);
+    const mapContext = useMap();
     const { openHelpModal, setOpenHelpModal } = mapContext;
 
     return (
@@ -61,7 +60,6 @@ export default function HelpModal() {
           <Typography color='text.primary' variant='body1' mb={0.8}>
             <DangerousOutlinedIcon /> Click this button to enter <b>Obstacle Mode</b>, in this mode you can mark dangerous spots inside a polygon.
           </Typography>
-
         </Box>
       </Modal>
     );

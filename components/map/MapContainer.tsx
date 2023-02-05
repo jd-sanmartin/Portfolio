@@ -1,21 +1,22 @@
 import { useContext, useState, useCallback, useEffect } from 'react';
-import { MapContext } from '../../pages/map';
+
+import { useMap } from '../../utils/map/MapContext';
 
 import { GoogleMap, useJsApiLoader, Marker, Polygon, Polyline } from '@react-google-maps/api';
 
-import { ThemeProvider, useTheme } from '@mui/material';
+import { useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Point from '../../types/map/Point';
 
 import MapButtons from './MapButtons';
-import mapStyles from '../../utils/MapStyles';
+import mapStyles from '../../utils/map/MapStyles';
 
 let svgPolygonMarker: string | google.maps.Icon | google.maps.Symbol | undefined;
 let svgObstacleMarker: string | google.maps.Icon | google.maps.Symbol | undefined;
 let svgPolylineMarker: string | google.maps.Icon | google.maps.Symbol | undefined;
 
 export default function MapContainer() {
-  const mapContext = useContext(MapContext);
+  const mapContext = useMap();
 
   const [map, setMap] = useState<any>(null);
 
